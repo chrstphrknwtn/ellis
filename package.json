@@ -1,0 +1,14 @@
+{
+  "name": "ellis",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "yargs": "5.0.0"
+  },
+  "bin" : {
+    "l": "./index.js"
+  },
+  "author": "Christopher Newton (https://github.com/chrstphrknwtn)",
+  "license": "MIT"
+}
