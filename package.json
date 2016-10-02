@@ -1,14 +1,19 @@
 {
   "name": "ellis",
   "version": "0.0.0",
-  "description": "",
+  "description": "Modulor directory listings",
   "main": "index.js",
   "dependencies": {
     "yargs": "5.0.0"
   },
-  "bin" : {
+  "bin": {
     "l": "./index.js"
   },
   "author": "Christopher Newton (https://github.com/chrstphrknwtn)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrstphrknwtn/ellis.git"
+  }
 }
