@@ -4,6 +4,7 @@
 
 const now = Date.now()
 
+const fs = require('fs')
 const yargs = require('yargs')
 const stats = require('./lib/stats')
 const print = require('./lib/print')
@@ -44,14 +45,25 @@ const cmd = argv.$0
 
 /* Register Plugins
 ------------------------------------------------------------------------------*/
-const plugins = [
-  require('./plugins/ellis-short-permissions'),
-  require('./plugins/ellis-short-dates-fading'),
-  // require('./plugins/ellis-date-dots'),
-  // require('./plugins/ellis-rotting-dates-white'),
-  // require('./plugins/ellis-short-dates'),
-  require('./plugins/ellis-filenames')
-]
+
+let namedPlugins
+const plugins = []
+
+if (argv.plugins) {
+  namedPlugins = argv.plugins.split(' ')
+} else {
+  namedPlugins = [
+    'short-permissions',
+    'short-dates-fading',
+    'filenames'
+  ]
+}
+
+namedPlugins.forEach(plugin => {
+  if (fs.statSync(`./plugins/ellis-${plugin}.js`)) {
+    plugins.push(require(`./plugins/ellis-${plugin}`))
+  }
+})
 
 /** Print Listing
 ------------------------------------------------------------------------------*/
