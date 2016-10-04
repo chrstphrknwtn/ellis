@@ -3,15 +3,15 @@
 'use strict'
 
 const now = Date.now()
+
+const yargs = require('yargs')
 const stats = require('./lib/stats')
 const print = require('./lib/print')
 const version = require('./package.json').version
 
-
 /* Argv config
 ------------------------------------------------------------------------------*/
-const argv = require('yargs')
-  .usage(
+const argv = yargs.usage(
     'Usage: $0 [options] [glob|dir|file|file list]'
   )
   .example(
@@ -39,7 +39,6 @@ const argv = require('yargs')
   .version(version)
   .argv
 
-
 /* Register Plugins
 ------------------------------------------------------------------------------*/
 const plugins = [
@@ -50,12 +49,12 @@ const plugins = [
   require('./plugins/ellis-filenames')
 ]
 
-
 /** Print Listing
 ------------------------------------------------------------------------------*/
 print(stats(argv), plugins)
 
-
 /** Print timer
 ------------------------------------------------------------------------------*/
-if (argv.t) console.log(`\n\x1b[33m${Date.now() - now}ms\x1b[0m`)
+if (argv.t) {
+  console.log(`\n\x1b[33m${Date.now() - now}ms\x1b[0m`)
+}

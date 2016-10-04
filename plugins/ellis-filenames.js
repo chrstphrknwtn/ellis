@@ -8,7 +8,7 @@ const path = require('path')
 module.exports = function filenamePlugin(stats) {
   const column = []
 
-  // TODO Parse LSCOLORS for color
+  // TODO: Parse LSCOLORS for color
   const colorCodes = {
     e: '\x1b[31m', // executable
     d: '\x1b[34m',
@@ -21,7 +21,7 @@ module.exports = function filenamePlugin(stats) {
   }
   const colorReset = '\x1b[0m'
 
-  stats.forEach((file) => {
+  stats.forEach(file => {
     if (file.isDirectory) {
       column.push(`${colorCodes.d}${file.name}`)
     } else if (file.isCharacterDevice) {
@@ -47,7 +47,6 @@ module.exports = function filenamePlugin(stats) {
       column.push(`${file.name}`)
     }
   })
-
 
   return column
 }

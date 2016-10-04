@@ -11,9 +11,19 @@
   },
   "author": "Christopher Newton (https://github.com/chrstphrknwtn)",
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "xo": "0.16.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/chrstphrknwtn/ellis.git"
+  },
+  "xo": {
+    "semicolon": false,
+    "space": 2,
+    "rules": {
+      "no-warning-comments": 0,
+      "xo/no-process-exit": 0
+    }
   }
 }
