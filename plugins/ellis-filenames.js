@@ -33,8 +33,13 @@ module.exports = function filenamePlugin(stats) {
     } else if (file.isSocket) {
       column.push(`${colorCodes.s}${file.name}`)
     } else if (file.isSymbolicLink) {
-      let symlinkTarget = fs.realpathSync(file.name)
-      const realpath = path.relative(process.cwd(), symlinkTarget)
+      let realpath
+      try {
+        let symlinkTarget = fs.realpathSync(file.name)
+        realpath = path.relative(process.cwd(), symlinkTarget)
+      } catch (err) {
+        realpath = '[broken symbolic link]'
+      }
       column.push(`${colorCodes.l}${file.name}${colorReset} → ${realpath}`)
     } else if (file.isExecutable) {
       column.push(`${colorCodes.e}${file.name}`)
