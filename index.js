@@ -39,11 +39,15 @@ const argv = yargs.usage(
   .version(version)
   .argv
 
+const args = argv._
+const cmd = argv.$0
+
 /* Register Plugins
 ------------------------------------------------------------------------------*/
 const plugins = [
   require('./plugins/ellis-short-permissions'),
   require('./plugins/ellis-short-dates-fading'),
+  // require('./plugins/ellis-date-dots'),
   // require('./plugins/ellis-rotting-dates-white'),
   // require('./plugins/ellis-short-dates'),
   require('./plugins/ellis-filenames')
@@ -51,7 +55,7 @@ const plugins = [
 
 /** Print Listing
 ------------------------------------------------------------------------------*/
-print(stats(argv), plugins)
+print(stats(args, cmd), plugins)
 
 /** Print timer
 ------------------------------------------------------------------------------*/
