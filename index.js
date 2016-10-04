@@ -53,9 +53,9 @@ if (argv.plugins) {
   namedPlugins = argv.plugins.split(' ')
 } else {
   namedPlugins = [
-    'short-permissions',
-    'short-dates-fading',
-    'filenames'
+    'short-mode',
+    'short-date-fading',
+    'filename'
   ]
 }
 

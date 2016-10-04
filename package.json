@@ -7,7 +7,7 @@
     "yargs": "5.0.0"
   },
   "scripts": {
-    "start": "xo & chokidar ./ -c './index.js -t -p \"date-dots filenames\" node_modules'"
+    "start": "xo & chokidar ./ -c './index.js -t -p \"date-dot filename\" node_modules'"
   },
   "bin": {
     "l": "./index.js"
