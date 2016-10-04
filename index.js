@@ -45,7 +45,6 @@ const cmd = argv.$0
 
 /* Register Plugins
 ------------------------------------------------------------------------------*/
-
 let namedPlugins
 const plugins = []
 
