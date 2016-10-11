@@ -64,7 +64,6 @@ namedPlugins.forEach(plugin => {
   }
 })
 
-
 /** Print Listing
 ------------------------------------------------------------------------------*/
 print(stats(args, cmd), plugins)
