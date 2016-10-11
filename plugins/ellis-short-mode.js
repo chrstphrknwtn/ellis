@@ -5,7 +5,12 @@
 module.exports = function shortPermissionsPlugin(stats) {
   const column = []
 
-  const colorCode = '\x1b[38;5;236m'
+  let colorCode
+  if (process.env.BACKGROUND === 'light') {
+    colorCode = '\x1b[38;5;252m'
+  } else {
+    colorCode = '\x1b[38;5;236m'
+  }
 
   stats.forEach(file => {
     let octal = file.stat.mode & 4095

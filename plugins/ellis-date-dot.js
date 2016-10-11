@@ -14,7 +14,14 @@ module.exports = function rottingDatesPlugin(stats) {
 
     const ageRange = 86400000 * 10 // one day * 10
     const ageMultiplier = Math.max(0, (ageRange - fileAge) / ageRange)
-    const ageAddon = ((255 - colorMin) * ageMultiplier) + colorMin
+
+    let ageAddon
+    if (process.env.BACKGROUND === 'light') {
+      ageAddon = (255 - colorMin) - ((255 - colorMin) * ageMultiplier)
+    } else {
+      ageAddon = ((255 - colorMin) * ageMultiplier) + colorMin
+    }
+
     let ageColor = parseInt(ageAddon, 10)
 
     const colorCode = `\x1b[38;2;${ageColor};${ageColor};${ageColor}m`
