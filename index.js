@@ -41,7 +41,7 @@ const argv = yargs.usage(
   .argv
 
 const args = argv._
-const cmd = argv.$0
+const cmd = argv.$0.split('/').slice(-1)[0]
 
 /* Register Plugins
 ------------------------------------------------------------------------------*/
