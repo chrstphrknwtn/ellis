@@ -59,10 +59,11 @@ if (argv.plugins) {
 }
 
 namedPlugins.forEach(plugin => {
-  if (fs.statSync(`./plugins/ellis-${plugin}.js`)) {
+  if (fs.statSync(`${__dirname}/plugins/ellis-${plugin}.js`)) {
     plugins.push(require(`./plugins/ellis-${plugin}`))
   }
 })
+
 
 /** Print Listing
 ------------------------------------------------------------------------------*/
