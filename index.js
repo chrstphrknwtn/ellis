@@ -59,8 +59,11 @@ if (argv.plugins) {
 }
 
 namedPlugins.forEach(plugin => {
-  if (fs.statSync(`${__dirname}/plugins/ellis-${plugin}.js`)) {
+  try {
     plugins.push(require(`./plugins/ellis-${plugin}`))
+  } catch (err) {
+    process.stdout.write(`${cmd}: Cannot find plugin '${plugin}'`)
+    process.exit(1)
   }
 })
 
