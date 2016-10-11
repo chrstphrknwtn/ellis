@@ -1,6 +1,6 @@
 {
   "name": "ellis",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Modulor directory listings",
   "main": "index.js",
   "dependencies": {
