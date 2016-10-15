@@ -10,7 +10,7 @@
     "start": "xo & chokidar ./ -c './index.js -t -p \"date-dot filename\" node_modules'"
   },
   "bin": {
-    "l": "./index.js"
+    "ellis": "./index.js"
   },
   "author": "Christopher Newton (https://github.com/chrstphrknwtn)",
   "license": "MIT",
