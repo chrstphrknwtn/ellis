@@ -21,13 +21,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/chrstphrknwtn/ellis.git"
-  },
-  "xo": {
-    "semicolon": false,
-    "space": 2,
-    "rules": {
-      "no-warning-comments": 0,
-      "xo/no-process-exit": 0
-    }
   }
 }
